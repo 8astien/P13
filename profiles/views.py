@@ -12,6 +12,7 @@ from .models import Profile
 
 logger = logging.getLogger(__name__)
 
+
 def index(request):
     """
     Display a list of all user profiles.

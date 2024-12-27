@@ -97,6 +97,7 @@ def test_letting_view_context():
     assert response.context['title'] == letting.title
     assert response.context['address'] == letting.address
 
+
 @pytest.mark.django_db
 def test_letting_model_str():
     """

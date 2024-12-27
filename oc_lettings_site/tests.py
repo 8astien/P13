@@ -2,6 +2,7 @@ import pytest
 from django.urls import reverse
 from django.test import Client
 
+
 @pytest.mark.django_db
 def test_index_view_status_code():
     """
@@ -36,6 +37,4 @@ def test_trigger_error_view():
     from oc_lettings_site.views import trigger_error
 
     with pytest.raises(ZeroDivisionError):
-        # Appel direct de la vue, car on n'a pas d'URL associé dans urls.py
-        # Si tu décides de mapper cette vue dans urls.py, tu pourrais faire un client.get() à la place.
         trigger_error(None)

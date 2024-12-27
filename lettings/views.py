@@ -13,6 +13,7 @@ from .models import Letting
 
 logger = logging.getLogger(__name__)  # ou "lettings" si tu préfères le logger "lettings"
 
+
 def index(request):
     """
     Display a list of all available lettings.
@@ -52,4 +53,3 @@ def letting(request, letting_id):
         'address': letting.address,
     }
     return render(request, 'lettings/letting.html', context)
-
