@@ -53,7 +53,7 @@ def test_profile_view_status_code():
     """
     user = User.objects.create_user(username='charlie', password='pwd123')
     profile = Profile.objects.create(user=user, favorite_city='Rome')
-
+    print(profile)
     client = Client()
     url = reverse('profiles:profile', kwargs={'username': 'charlie'})
     response = client.get(url)
@@ -78,6 +78,7 @@ def test_profile_view_context():
 
     assert 'profile' in response.context
     assert response.context['profile'] == profile
+
 
 @pytest.mark.django_db
 def test_profile_model_str():

@@ -10,6 +10,7 @@ from django.shortcuts import render
 
 logger = logging.getLogger(__name__)
 
+
 def index(request):
     """
     Render the homepage of the site.
@@ -23,5 +24,6 @@ def index(request):
     logger.info("Homepage (index) of oc_lettings_site was requested.")
     return render(request, 'index.html')
 
+
 def trigger_error(request):
-    division_by_zero = 1 / 0
+    1 / 0
