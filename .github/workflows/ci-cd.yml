@@ -77,8 +77,19 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Deployment
+      - name: Trigger Render Deployment
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
         run: |
-          echo "Deploying to Render (ou autre)..."
+          echo "Triggering deployment on Render..."
+          curl -X POST \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+                  "serviceId": "'"$RENDER_SERVICE_ID"'",
+                  "clearCache": false
+                }' \
+            https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys
+          echo "Deployment triggered on Render."
 
-          echo "Deployment done!"
