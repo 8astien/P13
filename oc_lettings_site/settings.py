@@ -5,7 +5,6 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-key')
 SENTRY_DSN = os.environ.get('SENTRY_DSN', '')
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 sentry_sdk.init(
     dsn=SENTRY_DSN,
@@ -52,7 +51,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ALLOWED_HOSTS
+ALLOWED_HOSTS = ['localhost', 'p13.onrender.com'] 
 
 
 # Application definition
