@@ -76,3 +76,16 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
 
+### Documentation 
+
+Retrouvez la documentation visible en ligne ici : `https://p13-oc-bc.readthedocs.io/en/latest/`
+
+### Docker 
+
+Pour récupérer l'image depuis Docker Hub : 
+
+`docker pull bastieng1/oc-lettings`
+
+Pour lancer l'image Docker localement : 
+
+`docker run -p 8000:8000 bastieng1/oc-lettings:latest`
