@@ -51,7 +51,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'p13.onrender.com']
+ALLOWED_HOSTS = ['localhost', 'oc-lettings-latest-o3sm.onrender.com']
 
 
 # Application definition
