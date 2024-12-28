@@ -11,7 +11,7 @@ import logging
 from django.shortcuts import render, get_object_or_404
 from .models import Letting
 
-logger = logging.getLogger(__name__)  # ou "lettings" si tu préfères le logger "lettings"
+logger = logging.getLogger(__name__)
 
 
 def index(request):
