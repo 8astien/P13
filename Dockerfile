@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# permet d’avoir les logs en “temps réel”
+# Permet d’avoir les logs en “temps réel”
 ENV PYTHONUNBUFFERED 1
 
 # Installer les dépendances système dont on aura besoin
@@ -21,8 +21,7 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # Ouvrir le port 8000
-EXPOSE 8000 
+EXPOSE 8000
 
-# Démarrage
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
+# Démarrage avec Uvicorn
+CMD ["uvicorn", "oc_lettings_site.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
