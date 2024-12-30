@@ -89,3 +89,4 @@ Pour récupérer l'image depuis Docker Hub :
 Pour lancer l'image Docker localement : 
 
 `docker run -p 8000:8000 bastieng1/oc-lettings:latest`
+tt
